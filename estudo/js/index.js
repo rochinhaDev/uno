@@ -20,6 +20,7 @@ const card62 = document.querySelector("#card62");
 const card72 = document.querySelector("#card72");
 const table = document.querySelector("#table");
 const playerTurn = true;
+const gameOverElement = document.getElementById("gameOver");
 function startGame() {
   //Criando as cartas adicionando no Deck
   for (let i = 0; i < colors.length; i++) {
@@ -117,19 +118,17 @@ function play(card) {
       }
     });
   }
-  if (deck.length === 0 && player1.length === 0) {
-    alert("Fim do jogo! Você ganhou!");
+  if (deck.length >= 0 && player1.length === 0 && player2.length > 0) {
+    console.log("Fim do jogo! Você ganhou!");
     return;
   }
-
-  if (deck.length === 0 && player2.length === 0) {
-    alert("Fim do jogo! O Computador ganhou!");
+  if (deck.length >= 0 && player2.length === 0 && player1.length > 0) {
+    console.log("Fim do jogo! O Computador ganhou!");
     return;
   }
   playComp();
 }
 player1Cards();
-
 function playComp() {
   let arrayedMesa = firstCard[0].split(" ");
   let compCard = false;
@@ -141,8 +140,7 @@ function playComp() {
         firstCard.unshift(card);
         player2.splice(index, 1);
         render();
-        compCard = true;
-        console.log("Computador Jogou");
+        compCard = false;
         return;
       }
     } else {
@@ -172,4 +170,5 @@ function playComp() {
   console.log(player1);
   console.log(player2);
   console.log(firstCard);
+  console.log(deck);
 }
