@@ -7,8 +7,8 @@ const player2 = [];
 const divPlayer1 = document.querySelector("#player1-hand");
 const table = document.querySelector("#table");
 const buyButton = document.querySelector("#buyButton");
+const buttonStart = document.querySelector("#start-game");
 const playerTurn = true;
-const gameOverElement = document.getElementById("gameOver");
 function startGame() {
   //Criando as cartas adicionando no Deck
   for (let i = 0; i < colors.length; i++) {
