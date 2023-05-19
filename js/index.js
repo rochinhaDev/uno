@@ -63,7 +63,7 @@ function play(card) {
     render();
     cardPlayable = true;
     playComp();
-    console.log("Vez do Computador");
+    alert("Vez do Computador");
   }
   checkStatus();
   // if (deck.length >= 0 && player1.length === 0 && player2.length > 0) {
@@ -77,18 +77,19 @@ function play(card) {
   //console.log("Vez do Computador");
 }
 buyButton.addEventListener("click", () => {
-  console.log("Comprei carta");
   if (deck.length > 0) {
     player1.push(deck.pop());
     render();
   } else {
     // Acontece quando as cartas do deck acabam
     if (player1.length < player2.length) {
-      console.log("Fim do jogo! Você ganhou!");
+      alert("Fim do jogo! Você ganhou!");
+      buyButton.classList.add("hide");
       return;
     }
     if (player2.length < player1.length) {
-      console.log("Fim do jogo! O Computador ganhou!");
+      alert("Fim do jogo! O Computador ganhou!");
+      buyButton.classList.add("hide");
       return;
     }
   }
@@ -100,18 +101,21 @@ function checkStatus() {
   if (deck.length === 0) {
     if (player1.length > player2.length) {
       //acontece quando o deck = a 0 e o player 1 - e maior que zero
-      console.log("Fim do jogo! O Computador ganhou!");
+      alert("Fim do jogo! O Computador ganhou!");
+      buyButton.classList.add("hide");
     }
     if (player2.length > player1.length) {
-      console.log("Fim do jogo! Você ganhou!");
+      alert("Fim do jogo! Você ganhou!");
+      buyButton.classList.add("hide");
     }
   }
   if (player1.length === 0) {
-    console.log("Fim do jogo! Você ganhou!");
-    
+    alert("Fim do jogo! Você ganhou!");
+    buyButton.classList.add("hide");
   }
   if (player2.length === 0) {
-    console.log("Fim do jogo! O Computador ganhou!");
+    alert("Fim do jogo! O Computador ganhou!");
+    buyButton.classList.add("hide");
   }
 }
 function buyComp() {
@@ -121,11 +125,13 @@ function buyComp() {
   } else {
     // Acontece quando as cartas do deck acabam
     if (player1.length < player2.length) {
-      console.log("Fim do jogo! Você ganhou!");
+      alert("Fim do jogo! Você ganhou!");
+      buyButton.classList.add("hide");
       return;
     }
     if (player2.length < player1.length) {
-      console.log("Fim do jogo! O Computador ganhou!");
+      alert("Fim do jogo! O Computador ganhou!");
+      buyButton.classList.add("hide");
       return;
     }
   }
@@ -141,7 +147,7 @@ function playComp() {
         firstCard.unshift(card);
         player2.splice(index, 1);
         compCard = true;
-        render()
+        render();
         return;
       }
     }
