@@ -37,6 +37,6 @@
   display: none;
 }
 .body {
-  background-image: url(/img/uno.jpg);
+  background-image: url("/img/uno.jpg");
   background-repeat: no-repeat;
 }
