@@ -2,13 +2,7 @@
   margin: 0;
   padding: 0;
 }
-.body {
-  background-image: url("/img/uno.jpg");
-  background-repeat: no-repeat;
-}
 .game {
-  background-image: url("/img/uno.jpg");
-  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,4 +35,11 @@
 }
 .hide {
   display: none;
+}
+.body {
+  background-image: url("./img/uno.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
